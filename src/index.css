@@ -1,13 +1,565 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #091024;
+
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Navbar */
+
+.navbar {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* Display children in a row */
+  justify-content: space-around;
+  /* Spacing between logo and nav items */
+  align-items: center;
+  background: linear-gradient(to right, #091024, #1e2442);
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  color: #edf0f1;
+
+  cursor: pointer;
+}
+
+.header-title:hover {
+  color: rgb(83, 129, 255);
+
+}
+
+.a:active {
+  color: #4070F4;
+}
+
+
+.navbar--button--container {
+  display: inline-block;
+
+}
+
+.navbar--button {
+  background-color: inherit;
+  margin: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  transition: all 0.2s ease 0s;
+  font-size: 25px;
+
+}
+
+.navbar--button:hover {
+  color: rgb(83, 129, 255);
+  cursor: pointer;
+
+}
+
+
+
+
+.university-logo {
+  padding-top: 25px;
+  padding-right: 10px;
+  display: block;
+  max-width: 50px;
+  max-height: 50px;
+  width: auto;
+  height: auto;
+
+
+}
+
+.header-logo {
+  display: flex;
+  position: left;
+  left: 0;
+  top: 0;
+  width: 20%;
+}
+
+/* Navbar END */
+
+
+/* main-screen */
+
+.mainScreen--container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  display: block;
+  padding-left: 10%;
+  padding-top: 15%;
+}
+
+
+.text {
+  position: relative;
+  font-size: 40px;
+  font-weight: 600;
+  padding: 5px;
+
+}
+
+.text.main--text {
+  color: #FFF;
+}
+
+.text.main--text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #091024;
+  animation: animate1 2s steps(20) forwards;
+
+}
+
+@keyframes animate1 {
+  0% {
+    border-left: 2px solid #FFF;
+
+  }
+
+  90% {
+    border-left: 2px solid #FFF;
+
+  }
+
+  100% {
+    left: 100%;
+    border-left: none;
+  }
+}
+
+.text.secondary--text {
+  color: #4070F4;
+}
+
+.text.secondary--text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #091024;
+  animation: animate 3s steps(15) infinite 2s forwards;
+}
+
+@keyframes animate {
+
+  0% {
+    border-left: none;
+  }
+
+  10% {
+    border-left: 2px solid #4070F4;
+
+  }
+
+  40%,
+  60% {
+    left: 100%;
+
+  }
+
+  100% {
+    left: 0%;
+    border-left: 2px solid #4070F4;
+
+  }
+}
+
+/* MainSection END */
+
+/*About*/
+.about--container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding-block: 11%;
+  background-color: #1e2442;
+
+}
+
+.about.content {
+  font-size: 20px;
+  color: #FFF;
+  max-width: 50%;
+  padding-right: 30px;
+  ;
+}
+
+.about.image {
+  max-width: 300px;
+  max-height: 300px;
+  /* width: auto;
+  height: auto;*/
+  border-radius: 50%;
+  overflow: hidden;
+
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #091024;
+  animation: animateAbout 0.8s forwards;
+}
+
+@keyframes animateAbout {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* About END **/
+
+/** Project */
+
+.project--container {
+  position: relative;
+  display: block;
+  max-width: 50%;
+  margin: auto;
+  margin-top: 80px;
+  padding-bottom: 2%;
+  padding-left: 5%;
+  padding-top: 1%;
+  border: 2px groove #4070F4;
+
+
+}
+
+.project--text--container {
+
+  color: #FFF;
+  max-width: 82%;
+}
+
+.project--video {
+  max-width: 80%;
+  max-height: 40%;
+  border-radius: 0%;
+  border: 2px groove #4070F4;
+
+
+}
+
+.project--title {
+  font-size: 30px;
+}
+
+.project--desc {
+  font-size: 20px;
+}
+
+
+/*Projects END */
+
+
+/* Wall */
+
+.form--container {
+  color: #FFF;
+  width: 33%;
+  margin: 2% auto;
+  padding: 30px;
+  border: 15px outset #4070F4;
+  border-radius: 40px;
+  background: linear-gradient(to right, #091024, #1e2442);
+  box-shadow: 0 0 1000px 300px rgb(30, 44, 122)
+}
+
+.form {
+  position: relative;
+  display: grid;
+  height: 550px;
+}
+
+.form--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30px;
+  height: 70px;
+}
+
+
+
+label {
+  display: block;
+  /* margin-bottom: 10px; */
+  font-size: 16px;
+}
+
+input,
+textarea,
+select {
+  padding: 10px;
+  margin: 5px 0;
+  border: 2px groove #4070F4;
+  border-radius: 5px;
+}
+
+button {
+  background: rgb(0, 130, 252);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: auto;
+  transition: background-color 0.35s;
+
+}
+
+button:hover {
+  background-color: #0056b3;
+  /* Change background color on hover */
+}
+
+button:active {
+  background-color: #003E8F;
+  /* Change background color while the button is clicked */
+}
+
+.open--form--button {
+
+  width: 8%;
+  height: 60px;
+  background: linear-gradient(200deg, rgb(4, 65, 156) rgb(37, 150, 255));
+  /* Ensure the button is centered vertically on the viewport height */
+  font-size: 26px;
+  color: white;
+  font-weight: 500;
+}
+
+#closeForm {
+  position: relative;
+
+  /* Red background for the button */
+  color: #fff;
+  /* White text color */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Wall END **/
+
+/*Quote */
+.quote--container {
+  position: absolute;
+  width: 300px;
+  border-radius: 7px;
+
+}
+
+
+.quote--text {
+  margin: 5px;
+  font-size: 17px;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  font: bold;
+  /* color: black; */
+
+}
+
+.form--sub--title {
+  font-size: 15px;
+  font-style: italic;
+  padding-top: 20px;
+}
+
+.quote--info {
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  font-style: italic;
+
+}
+
+
+/* form END **/
+
+/*Contact */
+
+
+.contact--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  margin: 8% auto;
+  padding-block: 100px;
+  border-radius: 30px;
+  background: linear-gradient(to top, #172542, #242b4e);
+
+
+}
+
+.contact--button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  height: 50px;
+  font-size: 25px;
+  font-family: cursive;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  /* padding-bottom: 50px; */
+}
+
+.contact--button--text {
+  margin: auto;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.contact--icon {
+  max-width: 28px;
+  object-fit: contain;
+  /* margin-right: 500px; */
+  animation: rollIcon 1.5s ease-in-out
+}
+
+@keyframes rollIcon {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    /* Rotate the icon 360 degrees */
+  }
+}
+
+@media (max-width:1200px) {
+  .navbar-tags {
+    width: 60%;
+    /* Expand to full width on smaller screens */
+    top: 60px;
+    /* Adjust the top position to create space for the header */
+    margin-left: auto;
+    font-size: 15px;
+  }
+
+
+  .header-logo {
+    left: 0;
+    top: 0;
+  }
+
+  .header-title {
+    font-size: 25px;
+
+  }
+
+  .text.main--text {
+
+    font-size: 18px;
+  }
+
+  .text.secondary--text {
+    font-size: 18px;
+  }
+
+  .about.content {
+    font-size: 12px;
+    color: #FFF;
+    max-width: 200px;
+  }
+
+  .about.image {
+    max-width: 180px;
+    max-height: 180px;
+  }
+
+
+  .open--form--button {
+    font-size: 17px;
+  }
+
+  .quote--container {
+    width: 180px;
+  }
+
+  .quote--info {
+    padding: 0;
+    font-size: 10px;
+  }
+
+
+  .quote--text {
+    font-size: 12px;
+  }
+
+
+  .form--container {
+    width: 60%;
+    margin: auto;
+  }
+
+  .form--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+
+  .form--sub--title {
+    content: none;
+  }
+
+
+
+
+
+
 }
